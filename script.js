@@ -14,3 +14,7 @@ function readExcel() {
     };
     reader.readAsBinaryString(input.files[0]);
 }
+
+function input_interface_button_click() {
+    alert("css 건드려야됨. 공부하기");
+}

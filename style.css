@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+}
+
+.input_interface_button {
+    display:relative;
+    top: 450px;
+}

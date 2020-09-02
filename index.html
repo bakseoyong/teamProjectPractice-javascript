@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>지하철</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
+    <script src="https://kit.fontawesome.com/b4169f941f.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </head>
 <body>
+    <div class="input_interface_div">
+
+        <div class="input_interface_startStation">
+
+        </div>
+        <div class="input_interface_finishStation">
+
+        </div>
+
+    </div>
+
+    <div class="input_interface_button">
+        <i class="fas fa-arrow-circle-right"></i>
+    </div>
+
     <h1>> 버튼 누르면 네이버지도처럼 쫙 펴지면서 출발역, 도착역 입력가능하게</h1>
-    <input type="button" name="btn1" value=">">
     <input type="file" onchange="readExcel()">
     <img src="./subway_img.PNG" alt="subway">
 
