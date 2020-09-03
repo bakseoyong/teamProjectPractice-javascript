@@ -7,7 +7,12 @@ body {
     display: flex;
 }
 
+.interface > img {
+    position:absolute;
+}
+
 .input_interface_button {
+    position: absolute;
     height: 50px;
     width: 25px;
 }
