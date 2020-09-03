@@ -1,3 +1,11 @@
+const button = document.querySelector('.input_interface_button');
+const menu = document.querySelector('.input_interface_menu');
+
+button.addEventListener('click', function(){
+    menu.classList.toggle('active');
+    console.log(1);
+});
+
 function readExcel() {
     let input = event.target;
     let reader = new FileReader();
@@ -13,8 +21,4 @@ function readExcel() {
         })
     };
     reader.readAsBinaryString(input.files[0]);
-}
-
-function input_interface_button_click() {
-    alert("css 건드려야됨. 공부하기");
 }
