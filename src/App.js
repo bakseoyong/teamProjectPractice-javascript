@@ -20,6 +20,8 @@ class App extends Component {
     var _a = null;
     if(this.state.menubarActive === true){
       _a = <Menubar></Menubar>
+    }else{
+      _a = null;
     }
     return _a;
   }
@@ -27,21 +29,19 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <div className="menubar">
-          <div className="menubar_icon">
-              <i className="fas fa-home" style={this.iconStyle45px}></i>
-              <i className="fas fa-map-marked-alt" style={this.iconStyle45px}></i>
-              <i className="fas fa-directions" style={this.iconStyle50px}></i>
-              <i className="fas fa-subway" style={this.iconStyle50px}></i>
-          </div>
-        </div>
         {this.getMenubarComponent()}
         <div className="map">
           <div className="menubar_active_button">
             <i className="fas fa-angle-right" onClick={()=>{
-              this.setState({
-                menubarActive : true
-              })
+              if(this.state.menubarActive === false){
+                this.setState({
+                  menubarActive: true
+                })
+              }else{
+                this.setState({
+                  menubarActive: false
+                })
+              }
             }}></i>
           </div>
 
