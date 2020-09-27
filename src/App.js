@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import subway_img from './images/subway_img.PNG';
+import LineMenu from './Components/LineMenu';
 import Menubar from './Components/Menubar';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -25,28 +26,54 @@ class App extends Component {
     }
     return _a;
   }
-
+  
   render(){
     return (
-      <div className="App">
-        {this.getMenubarComponent()}
-        <div className="map">
-          <div className="menubar_active_button">
-            <i className="fas fa-angle-right" onClick={()=>{
-              if(this.state.menubarActive === false){
-                this.setState({
-                  menubarActive: true
-                })
-              }else{
-                this.setState({
-                  menubarActive: false
-                })
-              }
-            }}></i>
-          </div>
+      <div className="map">
 
-          {/* <img src="./subway_img.PNG" alt="subway" /> */}
+        {this.getMenubarComponent()}
+
+        <div>
+          <img src={subway_img} alt="지도" id="subway_img"/>
         </div>
+
+        <div className="menubar_active_button">
+          <i className="fas fa-caret-right" onClick={()=>{
+            if(this.state.menubarActive === false){
+              this.setState({
+                menubarActive: true
+              })
+            }else{
+              this.setState({
+                menubarActive: false
+              })
+            }
+          }}></i>
+        </div>
+        
+        <div>
+          <LineMenu />
+        </div>
+
+        <div>
+          <button type="button" onClick={()=>{
+            var Img = document.getElementById("subway_img")
+            var currWidth = Img.clientWidth;
+            if(currWidth == 2500) return false;
+            else {
+              Img.style.width = (currWidth + 100) + "px";
+            }
+          }}>+</button>
+          <button type="button" onClick={()=>{
+            var Img = document.getElementById("subway_img")
+            var currWidth = Img.clientWidth;
+            if(currWidth == 100) return false;
+            else {
+              Img.style.width = (currWidth - 100) + "px";
+            }
+          }}>-</button>
+        </div>
+
       </div>
     );
   }

@@ -1,0 +1,25 @@
+.menubar {
+    height: 800px;
+    width: 200px;
+    background-color: whitesmoke;
+    color: gray;
+}
+
+.menubar_icon {
+    position: absolute;
+    height: 250px;
+    width: 50px;
+}
+
+.menubar_active_button {
+    position: absolute;
+    top: 300px;
+    left: 10px;
+    height: 50px;
+    width: 25px;
+}
+
+.menubar_active_button > i {
+    height: 30px;
+    width: 20px;
+}

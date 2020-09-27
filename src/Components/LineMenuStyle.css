@@ -1,0 +1,9 @@
+ul > li {
+    float:left;
+    list-style-type: none;
+}
+
+ul > li > img {
+    width:30px;
+    height:30px;
+}

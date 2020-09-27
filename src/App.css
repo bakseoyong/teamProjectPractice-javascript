@@ -3,30 +3,12 @@
     margin: 0;
 }
 
-body {
+.map {
+    margin: 0;
     display: flex;
 }
 
-.map > img {
-    position:absolute;
-}
 
-.menubar_active_button {
-    position: absolute;
-    height: 50px;
-    width: 25px;
+button {
+    width : 20px;
 }
-
-.menubar {
-    height: 800px;
-    width: 50px;
-    background-color: whitesmoke;
-    color: gray;
-}
-
-.menubar_icon {
-    position: absolute;
-    height: 250px;
-    width: 50px;
-}
-
