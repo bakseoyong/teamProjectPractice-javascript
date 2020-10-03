@@ -12,6 +12,7 @@ import subway_img_9 from './images/subway_img_9.png';
 
 class SubwayMap extends Component{
     render(){
+        
         const setSubwayImg = (lineNum) => {
             if(lineNum === 0){
                 return <img src={subway_img_0} alt="지도" id="subway_img"/>

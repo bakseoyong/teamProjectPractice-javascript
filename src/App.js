@@ -57,6 +57,7 @@ class App extends Component {
           <LineMenu setLineNum={this.setLineNum}/>
 
           <div>
+            {/* onClick 에 작성한 함수 위로 올리면 html 파싱되기전에 함수 호출되서 에러 발생 */}
             <button type="button" onClick={()=>{
               var Img = document.getElementById("subway_img")
               var currWidth = Img.clientWidth;
