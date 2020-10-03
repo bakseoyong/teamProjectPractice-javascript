@@ -1,21 +1,13 @@
 import React, {Component} from 'react';
-import subway_img from './images/subway_img.PNG';
 import LineMenu from './Components/LineMenu';
 import Menubar from './Components/Menubar';
+import SubwayMap from './Components/SubwayMap';
 import './App.css';
 
 class App extends Component {
   state = {
     menubarActive: false,
   };
-
-  iconStyle45px = {
-    fontSize: "45px"
-  }
-
-  iconStyle50px = {
-    fontSize: "50px"
-  }
 
   getMenubarComponent(){
     var _a = null;
@@ -26,54 +18,57 @@ class App extends Component {
     }
     return _a;
   }
+
+  menubarActive = () => {
+    if(this.state.menubarActive === false){
+      this.setState({
+        menubarActive: true
+      })
+    }else{
+      this.setState({
+        menubarActive: false
+      })
+    }
+  }
   
   render(){
     return (
-      <div className="map">
+      <div>
+        <div className="map">
+          {/* 메뉴바 활성화 / 비활성화 함수 */}
+          {this.getMenubarComponent()}
 
-        {this.getMenubarComponent()}
+          <div className="menubarActiveButton">
+            {/* onClick{this.menubarActive()} 로 작성하면 렌더링 될때마다 실행된다. */}
+            <i className="fas fa-caret-right" onClick={() => this.menubarActive()}></i>
+          </div>
 
-        <div>
-          <img src={subway_img} alt="지도" id="subway_img"/>
-        </div>
+          {/* 지하철 이미지를 가져오는 컴포넌트 */}
+          <SubwayMap/>
 
-        <div className="menubar_active_button">
-          <i className="fas fa-caret-right" onClick={()=>{
-            if(this.state.menubarActive === false){
-              this.setState({
-                menubarActive: true
-              })
-            }else{
-              this.setState({
-                menubarActive: false
-              })
-            }
-          }}></i>
-        </div>
-        
-        <div>
+          {/* 각 호선별 버튼을 가져오는 컴포넌트 */}
           <LineMenu />
-        </div>
 
-        <div>
-          <button type="button" onClick={()=>{
-            var Img = document.getElementById("subway_img")
-            var currWidth = Img.clientWidth;
-            if(currWidth == 2500) return false;
-            else {
-              Img.style.width = (currWidth + 100) + "px";
-            }
-          }}>+</button>
-          <button type="button" onClick={()=>{
-            var Img = document.getElementById("subway_img")
-            var currWidth = Img.clientWidth;
-            if(currWidth == 100) return false;
-            else {
-              Img.style.width = (currWidth - 100) + "px";
-            }
-          }}>-</button>
-        </div>
+          <div>
+            <button type="button" onClick={()=>{
+              var Img = document.getElementById("subway_img")
+              var currWidth = Img.clientWidth;
+              if(currWidth == 2500) return false;
+              else {
+                Img.style.width = (currWidth + 100) + "px";
+              }
+            }}>+</button>
+            <button type="button" onClick={()=>{
+              var Img = document.getElementById("subway_img")
+              var currWidth = Img.clientWidth;
+              if(currWidth == 100) return false;
+              else {
+                Img.style.width = (currWidth - 100) + "px";
+              }
+            }}>-</button>
+          </div>
 
+        </div>
       </div>
     );
   }
