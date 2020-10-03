@@ -7,6 +7,7 @@ import './App.css';
 class App extends Component {
   state = {
     menubarActive: false,
+    lineNum : 0
   };
 
   getMenubarComponent(){
@@ -30,6 +31,12 @@ class App extends Component {
       })
     }
   }
+
+  setLineNum = (changeLineNum) => {
+      this.setState({
+        lineNum : changeLineNum
+      })
+  }
   
   render(){
     return (
@@ -38,22 +45,22 @@ class App extends Component {
           {/* 메뉴바 활성화 / 비활성화 함수 */}
           {this.getMenubarComponent()}
 
-          <div className="menubarActiveButton">
-            {/* onClick{this.menubarActive()} 로 작성하면 렌더링 될때마다 실행된다. */}
-            <i className="fas fa-caret-right" onClick={() => this.menubarActive()}></i>
+          {/* onClick{this.menubarActive()} 로 작성하면 렌더링 될때마다 실행된다. */}
+          <div className="menubarActiveButton" onClick={() => this.menubarActive()}>
+            <i className="fas fa-caret-right" ></i>
           </div>
 
           {/* 지하철 이미지를 가져오는 컴포넌트 */}
-          <SubwayMap/>
+          <SubwayMap lineNum={this.state.lineNum}/>
 
           {/* 각 호선별 버튼을 가져오는 컴포넌트 */}
-          <LineMenu />
+          <LineMenu setLineNum={this.setLineNum}/>
 
           <div>
             <button type="button" onClick={()=>{
               var Img = document.getElementById("subway_img")
               var currWidth = Img.clientWidth;
-              if(currWidth == 2500) return false;
+              if(currWidth === 2500) return false;
               else {
                 Img.style.width = (currWidth + 100) + "px";
               }
@@ -61,7 +68,7 @@ class App extends Component {
             <button type="button" onClick={()=>{
               var Img = document.getElementById("subway_img")
               var currWidth = Img.clientWidth;
-              if(currWidth == 100) return false;
+              if(currWidth === 100) return false;
               else {
                 Img.style.width = (currWidth - 100) + "px";
               }
