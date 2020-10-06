@@ -2,10 +2,16 @@ import React, {Component} from 'react';
 
 class SubwayMap extends Component{
     render(){
-        
-        const setSubwayImg = (lineNum) => {
+
+        const sectionStyle = {
+            width: "100%",
+            height: "400px",
+            backgroundImage: "/images/subway_img_" + 0 + ".png"
+        }
+
+        const setSubwayImg = (lineNum) => {  
             if(lineNum === 0){
-                return <img src='/images/subway_img_0.png' alt="지도" id="subway_img"/>
+                return <img src={sectionStyle.backgroundImage} alt="지도" id="subway_img"/>                
             }else if(lineNum === 1){
                 return <img src='/images/subway_img_1.png' alt="1호선지도" id="subway_img_1"/>
             }else if(lineNum === 2){
