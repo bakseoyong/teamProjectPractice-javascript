@@ -7,7 +7,9 @@ import './App.css';
 class App extends Component {
   state = {
     menubarActive: false,
-    lineNum : 0
+    lineNum : 0,
+    searchDep : 0,
+    searchArr : 0
   };
 
   getMenubarComponent(){
@@ -36,6 +38,19 @@ class App extends Component {
       this.setState({
         lineNum : changeLineNum
       })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(1);
+  }
+
+  handleSearchDepChange = (e) => {
+    this.setState({searchDep : e.target.value});
+  }
+
+  handleSearchArrChange = (e) => {
+    this.setState({searchArr : e.target.value});
   }
   
   render(){

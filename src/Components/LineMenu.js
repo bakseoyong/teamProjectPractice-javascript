@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import './LineMenu.css'
 
 class LineMenu extends Component{
-
     render(){ 
-
+        const listLineHtml = {
+            //backgroundImage: `/images/Line${this.props.lineNum}.png`
+        }
         return(
             <div>
                 <ul className="listLine">

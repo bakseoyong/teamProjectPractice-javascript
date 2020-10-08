@@ -11,15 +11,3 @@
     width: 50px;
 }
 
-.menubarActiveButton {
-    position: flex;
-    top: 300px;
-    left: 10px;
-    height: 50px;
-    width: 25px;
-}
-
-.menubar_active_button > i {
-    height: 30px;
-    width: 20px;
-}
