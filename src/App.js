@@ -12,16 +12,6 @@ class App extends Component {
     searchArr : 0
   };
 
-  getMenubarComponent(){
-    var _a = null;
-    if(this.state.menubarActive === true){
-      _a = <Menubar></Menubar>
-    }else{
-      _a = null;
-    }
-    return _a;
-  }
-
   menubarActive = () => {
     if(this.state.menubarActive === false){
       this.setState({
@@ -52,8 +42,24 @@ class App extends Component {
   handleSearchArrChange = (e) => {
     this.setState({searchArr : e.target.value});
   }
-  
+
+  getMenubarComponent(){
+    console.log(1);
+    var _a = null;
+    if(this.state.menubarActive === true){
+      _a = <Menubar onChange={() => this.handleSearchDepChange} 
+      onSubmit={() => this.handleSubmit} 
+      lineNum={this.state.lineNum}
+      searchDep={this.state.searchDep} 
+      searchArr={this.state.searchArr}/>
+    }else{
+      _a = null;
+    }
+    return _a;
+  }
+
   render(){
+    console.log(2);
     return (
       <div>
         <div className="map">

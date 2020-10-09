@@ -9,7 +9,6 @@
 }
 
 
-button {
-    width : 20px;
+.menubarActiveButton {
+    width : 50px;
 }
-
